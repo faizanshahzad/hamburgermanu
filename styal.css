@@ -1,0 +1,76 @@
+@media screen and (max-width: 800px) {
+    html {
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    html {
+      font-size: 6px;
+    }
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  
+  .menu {
+    position: relative;
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    margin: 2rem 6rem;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+    transform-origin: center center 5rem;
+  }
+  .menu__face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10rem;
+    height: 10rem;
+    transition: transform 0.5s ease;
+    transform-origin: center center 5rem;
+  }
+  .menu__face--d2 {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  .menu__face--d3 {
+    transform: translateZ(10rem);
+  }
+  .menu__face--d4 {
+    transform: rotate3d(0, -1, 0, 90deg);
+  }
+  .menu__face--d5 {
+    transform: rotate3d(-1, 0, 0, 90deg);
+  }
+  .menu__face--d6 {
+    transform: rotate3d(1, 0, 0, 90deg);
+  }
+  .menu__face--axis-vertical {
+    transform: translateZ(5rem);
+  }
+  .menu__face--axis-horizontal {
+    transform: rotate3d(-1, 0, 0, 90deg) translateZ(5rem);
+  }
+  .menu__face--square {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .menu--minimal .menu__face--square {
+    background: none;
+  }
+  .menu[data-position="1"] {
+    transform: rotate3d(0, 1, 0, 90deg);
+  }
+  .menu[data-position="2"] {
+    transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 90deg) rotate3d(0, 1, 0, 90deg);
+  }
+  .menu[data-position="3"] {
+    transform: rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 90deg) rotate3d(0, 1, 0, 90deg) rotate3d(0, 1, 0, 90deg) rotate3d(0, 0, 1, 90deg);
+  }
